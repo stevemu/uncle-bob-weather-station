@@ -3,9 +3,11 @@ import { TemperatureSensor } from './TemperatureSensor.ts';
 
 export abstract class Schedular {
   private timePassed = 0;
-  private temperatureSensor = new TemperatureSensor();
 
-  constructor(private monitoringScreen: MonitoringScreen) {}
+  constructor(
+    private monitoringScreen: MonitoringScreen,
+    private temperatureSensor: TemperatureSensor,
+  ) {}
 
   protected tic() {
     this.timePassed += 500;
