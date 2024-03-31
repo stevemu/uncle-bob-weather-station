@@ -4,7 +4,7 @@ import { Observer } from './Observer.ts';
 export class TemperatureObserver implements Observer {
   constructor(private monitoringScreen: MonitoringScreen) {}
 
-  update(): void {
-    this.monitoringScreen.displayTemperature(Math.random() * 100);
+  update(val: number): void {
+    this.monitoringScreen.displayTemperature(val);
   }
 }

@@ -8,11 +8,11 @@ export class TemperatureSensor implements Observable {
     this.observers.push(observer);
   }
 
-  notifyObservers(): void {
-    this.observers.forEach((observer) => observer.update());
+  notifyObservers(temp: number): void {
+    this.observers.forEach((observer) => observer.update(temp));
   }
 
-  public read() {
+  read() {
     return Math.random() * 100;
   }
 }
