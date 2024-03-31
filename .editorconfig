@@ -1,0 +1,27 @@
+# Editor configuration, see http://editorconfig.org
+
+# Note use of VS Code for this project is strongly encouraged!
+# It maximizes parity (lint + format + type-check) between IDE + scripts/CI.
+# This editorconfig file is complementary to the ESLint-driven prettier config.
+# It's provided for the sake of devs using other than VS Code editors.
+
+# If using a Jetbrains product like Webstorm, .editorconfig should be enabled by default but you can follow these
+# instructions to be sure:
+# https://www.jetbrains.com/help/idea/editorconfig.html
+
+root = true
+
+[*]
+charset = utf-8
+# overrides eslint+prettier "endOfLine"
+end_of_line = lf
+# overrides eslint+prettier "useTabs"
+indent_style = space
+# overrides eslint+prettier "tabWidth"
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

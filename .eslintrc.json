@@ -1,0 +1,40 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "root": true,
+  "plugins": ["prettier"],
+  "env": {
+    "amd": true,
+    "browser": true,
+    "es2022": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "rules": {
+    "import/no-cycle": [2, { "maxDepth": "∞" }],
+    "prettier/prettier": [
+      2,
+      {
+        "arrowParens": "always",
+        "editorconfig": true,
+        "endOfLine": "auto",
+        "jsxBracketSameLine": true,
+        "jsxSingleQuote": true,
+        "printWidth": 100,
+        "quoteProps": "as-needed",
+        "semi": true,
+        "singleQuote": true,
+        "usePrettierrc": false
+      }
+    ]
+  }
+}
