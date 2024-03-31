@@ -1,15 +1,15 @@
-import { AlarmClock } from './AlarmClock';
-import { AlarmListener } from './AlarmListener';
-import { Observer } from './Observer';
+import { AlarmClock } from './AlarmClock.ts';
+import { AlarmListener } from './AlarmListener.ts';
+import { Observer } from './Observer.ts';
 
-export class BarometricPressureSensor {
+export abstract class BarometricPressureSensor {
   private observers: Observer[] = [];
+  private lastPressure: number = 0;
 
   constructor(alarmClock: AlarmClock) {
     alarmClock.wakeEvery(1000, {
       wakeUp: () => {
-        const pressure = this.read();
-        this.notifyObservers(pressure);
+        this.check();
       },
     } as AlarmListener);
   }
@@ -22,7 +22,12 @@ export class BarometricPressureSensor {
     this.observers.forEach((observer) => observer.update(temp));
   }
 
-  read() {
-    return Math.random() * 100;
+  check(): void {
+    const pressure = this.read();
+    if (Math.abs(pressure - this.lastPressure) > 0.1) {
+      this.notifyObservers(pressure);
+    }
   }
+
+  abstract read(): number;
 }

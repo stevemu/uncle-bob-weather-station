@@ -1,11 +1,11 @@
 import { AlarmClockImp } from './AlarmClockImp.ts';
-import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
+import { Nimbus1BarometricPressureSensor } from './Nimbus1BarometricPressureSensor.ts';
+import { Nimbus1TemperatureSensor } from './Nimbus1TemperatureSensor.ts';
 import { StreamingOutput } from './StreamingOutput.ts';
-import { TemperatureSensor } from './TemperatureSensor.ts';
 
 const alarmClock = new AlarmClockImp();
 
-const temperatureSensor = new TemperatureSensor(alarmClock);
-const barometricPressureSensor = new BarometricPressureSensor(alarmClock);
+const temperatureSensor = new Nimbus1TemperatureSensor(alarmClock);
+const barometricPressureSensor = new Nimbus1BarometricPressureSensor(alarmClock);
 
 new StreamingOutput(temperatureSensor, barometricPressureSensor);

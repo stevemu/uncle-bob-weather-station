@@ -3,14 +3,14 @@ import { AlarmListener } from './AlarmListener.ts';
 import { Observable } from './Observable.ts';
 import { Observer } from './Observer.ts';
 
-export class TemperatureSensor implements Observable {
+export abstract class TemperatureSensor implements Observable {
   private observers: Observer[] = [];
+  private lastTemp: number = 0;
 
   constructor(alarmClock: AlarmClock) {
     alarmClock.wakeEvery(1000, {
       wakeUp: () => {
-        const temp = this.read();
-        this.notifyObservers(temp);
+        this.check();
       },
     } as AlarmListener);
   }
@@ -23,7 +23,13 @@ export class TemperatureSensor implements Observable {
     this.observers.forEach((observer) => observer.update(temp));
   }
 
-  read() {
-    return Math.random() * 100;
+  check(): void {
+    const temp = this.read();
+    if (Math.abs(temp - this.lastTemp) > 0.1) {
+      this.lastTemp = temp;
+      this.notifyObservers(temp);
+    }
   }
+
+  abstract read(): number;
 }
