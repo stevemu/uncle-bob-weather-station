@@ -1,7 +1,7 @@
-import { BarometricPressureSensor } from './BarometricPressureSensor';
+import { BarometricPressureSensorImp } from './BarometricPressureSensorImp';
 
-export class Nimbus1BarometricPressureSensor extends BarometricPressureSensor {
-  read() {
-    return Math.random() * 100;
+export class Nimbus1BarometricPressureSensor implements BarometricPressureSensorImp {
+  read(): number {
+    return 0;
   }
 }
