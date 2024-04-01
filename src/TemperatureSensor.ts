@@ -2,12 +2,16 @@ import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
 import { Observable } from './Observable.ts';
 import { Observer } from './Observer.ts';
+import { TemperatureSensorImp } from './TemperatureSensorImp.ts';
 
-export abstract class TemperatureSensor implements Observable {
+export class TemperatureSensor implements Observable {
   private observers: Observer[] = [];
   private lastTemp: number = 0;
 
-  constructor(alarmClock: AlarmClock) {
+  constructor(
+    alarmClock: AlarmClock,
+    private sensorImp: TemperatureSensorImp,
+  ) {
     alarmClock.wakeEvery(1000, {
       wakeUp: () => {
         this.check();
@@ -31,5 +35,7 @@ export abstract class TemperatureSensor implements Observable {
     }
   }
 
-  abstract read(): number;
+  read(): number {
+    return this.sensorImp.read();
+  }
 }
