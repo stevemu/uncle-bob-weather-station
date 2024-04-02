@@ -1,4 +1,4 @@
-import { TemperatureSensorImp } from './TemperatureSensorImp';
+import { TemperatureSensorImp } from './TemperatureSensorImp.ts';
 
 export class Nimbus1TemperatureSensor implements TemperatureSensorImp {
   read(): number {

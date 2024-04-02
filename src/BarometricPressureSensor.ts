@@ -10,7 +10,7 @@ export class BarometricPressureSensor {
   private sensorImp!: BarometricPressureSensorImp;
 
   constructor(alarmClock: AlarmClock, st: StationToolkit) {
-    alarmClock.wakeEvery(1000, {
+    alarmClock.wakeEvery(1, {
       wakeUp: () => {
         this.check();
       },
@@ -28,9 +28,10 @@ export class BarometricPressureSensor {
 
   check(): void {
     const pressure = this.read();
-    if (Math.abs(pressure - this.lastPressure) > 0.1) {
+    if (pressure !== this.lastPressure) {
       this.notifyObservers(pressure);
     }
+    this.lastPressure = pressure;
   }
 
   read(): number {

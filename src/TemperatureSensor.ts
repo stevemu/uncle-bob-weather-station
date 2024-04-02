@@ -11,7 +11,7 @@ export class TemperatureSensor implements Observable {
   private sensorImp!: TemperatureSensorImp;
 
   constructor(alarmClock: AlarmClock, st: StationToolkit) {
-    alarmClock.wakeEvery(1000, {
+    alarmClock.wakeEvery(1, {
       wakeUp: () => {
         this.check();
       },

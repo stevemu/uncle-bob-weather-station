@@ -1,7 +1,7 @@
-import { BarometricPressureSensorImp } from './BarometricPressureSensorImp';
+import { BarometricPressureSensorImp } from './BarometricPressureSensorImp.ts';
 
 export class Nimbus1BarometricPressureSensor implements BarometricPressureSensorImp {
   read(): number {
-    return 0;
+    return Math.random() * 1000;
   }
 }
