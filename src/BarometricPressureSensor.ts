@@ -2,20 +2,20 @@ import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
 import { BarometricPressureSensorImp } from './BarometricPressureSensorImp.ts';
 import { Observer } from './Observer.ts';
+import { StationToolkit } from './StationToolkit.ts';
 
 export class BarometricPressureSensor {
   private observers: Observer[] = [];
   private lastPressure: number = 0;
+  private sensorImp!: BarometricPressureSensorImp;
 
-  constructor(
-    alarmClock: AlarmClock,
-    private barometricPressureSensorImp: BarometricPressureSensorImp,
-  ) {
+  constructor(alarmClock: AlarmClock, st: StationToolkit) {
     alarmClock.wakeEvery(1000, {
       wakeUp: () => {
         this.check();
       },
     } as AlarmListener);
+    this.sensorImp = st.makeBarometricPressure();
   }
 
   addObserver(observer: Observer): void {
@@ -34,6 +34,6 @@ export class BarometricPressureSensor {
   }
 
   read(): number {
-    return this.barometricPressureSensorImp.read();
+    return this.sensorImp.read();
   }
 }

@@ -2,21 +2,21 @@ import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
 import { Observable } from './Observable.ts';
 import { Observer } from './Observer.ts';
+import { StationToolkit } from './StationToolkit.ts';
 import { TemperatureSensorImp } from './TemperatureSensorImp.ts';
 
 export class TemperatureSensor implements Observable {
   private observers: Observer[] = [];
   private lastTemp: number = 0;
+  private sensorImp!: TemperatureSensorImp;
 
-  constructor(
-    alarmClock: AlarmClock,
-    private sensorImp: TemperatureSensorImp,
-  ) {
+  constructor(alarmClock: AlarmClock, st: StationToolkit) {
     alarmClock.wakeEvery(1000, {
       wakeUp: () => {
         this.check();
       },
     } as AlarmListener);
+    this.sensorImp = st.makeTemperature();
   }
 
   addObserver(observer: Observer): void {
