@@ -1,5 +1,5 @@
 import { MonitoringScreen } from './MonitoringScreen.ts';
-import { Observer } from '../WeatherMonitoringSystem/Observer.ts';
+import { Observer } from '../WeatherStationComponent/Observer.ts';
 
 export class TemperatureObserver implements Observer {
   constructor(private monitoringScreen: MonitoringScreen) {}

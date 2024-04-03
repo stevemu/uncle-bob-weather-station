@@ -1,4 +1,4 @@
-import { Observer } from './Observer.ts';
+import { Observer } from '../WeatherStationComponent/Observer.ts';
 
 export interface Observable {
   addObserver(observer: Observer): void;

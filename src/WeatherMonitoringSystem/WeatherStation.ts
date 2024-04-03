@@ -1,17 +1,15 @@
-import { Nimbus1Toolkit } from '../Nimbus1/Nimbus1Tookit.ts';
-import { Observer } from './Observer.ts';
+import { Observer } from '../WeatherStationComponent/Observer.ts';
 import { AlarmClock } from './AlarmClock.ts';
 import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
 import { TemperatureSensor } from './TemperatureSensor.ts';
 import { WeatherStationComponent } from '../WeatherStationComponent/WeatherStationComponent.ts';
+import { StationToolkit } from '../API/StationToolkit.ts';
 
 export class WeatherStation implements WeatherStationComponent {
   private temperatureSensor!: TemperatureSensor;
   private barometricPressureSensor!: BarometricPressureSensor;
 
-  constructor() {
-    const st = new Nimbus1Toolkit();
-
+  constructor(st: StationToolkit) {
     const ac = new AlarmClock(st);
 
     this.temperatureSensor = new TemperatureSensor(ac, st);

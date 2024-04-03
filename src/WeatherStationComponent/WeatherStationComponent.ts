@@ -1,4 +1,4 @@
-import { Observer } from '../WeatherMonitoringSystem/Observer';
+import { Observer } from './Observer';
 
 export interface WeatherStationComponent {
   addTemperatureObserver(observer: Observer): void;
