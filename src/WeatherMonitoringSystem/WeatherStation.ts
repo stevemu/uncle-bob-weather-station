@@ -1,8 +1,8 @@
-import { Nimbus1Toolkit } from '../Nimbus1/Nimbus1Tookit';
-import { Observer } from '../Observer';
-import { AlarmClock } from './AlarmClock';
-import { BarometricPressureSensor } from './BarometricPressureSensor';
-import { TemperatureSensor } from './TemperatureSensor';
+import { Nimbus1Toolkit } from '../Nimbus1/Nimbus1Tookit.ts';
+import { Observer } from '../Observer.ts';
+import { AlarmClock } from './AlarmClock.ts';
+import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
+import { TemperatureSensor } from './TemperatureSensor.ts';
 
 export class WeatherStation {
   private temperatureSensor!: TemperatureSensor;
