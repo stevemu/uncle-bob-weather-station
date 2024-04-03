@@ -3,8 +3,9 @@ import { Observer } from './Observer.ts';
 import { AlarmClock } from './AlarmClock.ts';
 import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
 import { TemperatureSensor } from './TemperatureSensor.ts';
+import { WeatherStationComponent } from '../WeatherStationComponent/WeatherStationComponent.ts';
 
-export class WeatherStation {
+export class WeatherStation implements WeatherStationComponent {
   private temperatureSensor!: TemperatureSensor;
   private barometricPressureSensor!: BarometricPressureSensor;
 
