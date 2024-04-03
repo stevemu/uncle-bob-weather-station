@@ -1,14 +1,15 @@
-import { AlarmClock } from './AlarmClock.ts';
-import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
-import { Nimbus1Toolkit } from './Nimbus1Tookit.ts';
-import { StreamingOutput } from './StreamingOutput.ts';
-import { TemperatureSensor } from './TemperatureSensor.ts';
+import { BarometricPressureObserver } from './UI/BarometricPressureObserver.ts';
+import { BarometricPressureTrendObserver } from './UI/BarometricPressureTrendObserver.ts';
+import { StreamingOutput } from './UI/StreamingOutput.ts';
+import { TemperatureObserver } from './UI/TemperatureObserver.ts';
+import { WeatherStation } from './WeatherMonitoringSystem/WeatherStation.ts';
 
-const st = new Nimbus1Toolkit();
+const so = new StreamingOutput();
+const temperatureObserver = new TemperatureObserver(so);
+const barometricPressureObserver = new BarometricPressureObserver(so);
+const barometricPressureTrendObserver = new BarometricPressureTrendObserver(so);
 
-const ac = new AlarmClock(st);
-
-const ts = new TemperatureSensor(ac, st);
-const bps = new BarometricPressureSensor(ac, st);
-
-new StreamingOutput(ts, bps);
+const ws = new WeatherStation();
+ws.addTemperatureObserver(temperatureObserver);
+ws.addBarometricPressureObserver(barometricPressureObserver);
+ws.addBarometricPressureObserver(barometricPressureTrendObserver);
