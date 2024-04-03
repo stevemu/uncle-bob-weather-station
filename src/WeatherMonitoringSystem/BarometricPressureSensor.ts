@@ -1,10 +1,11 @@
 import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
 import { BarometricPressureSensorImp } from '../API/BarometricPressureSensorImp.ts';
-import { Observer } from '../Observer.ts';
+import { Observer } from './Observer.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
+import { Observable } from './Observable.ts';
 
-export class BarometricPressureSensor {
+export class BarometricPressureSensor implements Observable {
   private observers: Observer[] = [];
   private lastPressure: number = 0;
   private sensorImp!: BarometricPressureSensorImp;

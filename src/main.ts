@@ -5,6 +5,7 @@ import { TemperatureObserver } from './UI/TemperatureObserver.ts';
 import { WeatherStation } from './WeatherMonitoringSystem/WeatherStation.ts';
 
 const so = new StreamingOutput();
+
 const temperatureObserver = new TemperatureObserver(so);
 const barometricPressureObserver = new BarometricPressureObserver(so);
 const barometricPressureTrendObserver = new BarometricPressureTrendObserver(so);
