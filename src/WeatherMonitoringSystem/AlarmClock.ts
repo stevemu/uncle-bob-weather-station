@@ -18,6 +18,13 @@ export class AlarmClock implements ClockListener {
     });
   }
 
+  wakeEveryDay(alarmListener: AlarmListener) {
+    this.listeners.push({
+      l: alarmListener,
+      i: 24 * 60 * 60,
+    });
+  }
+
   tic(): void {
     this.ticPassed++;
 
