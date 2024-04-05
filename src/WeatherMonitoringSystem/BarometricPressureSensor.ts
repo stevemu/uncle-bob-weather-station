@@ -3,7 +3,7 @@ import { AlarmListener } from './AlarmListener.ts';
 import { BarometricPressureSensorImp } from '../API/BarometricPressureSensorImp.ts';
 import { Observer } from '../WeatherStationComponent/Observer.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
-import { Observable } from './Observable.ts';
+import { Observable } from '../WeatherStationComponent/Observable.ts';
 
 export class BarometricPressureSensor implements Observable {
   private observers: Observer[] = [];
