@@ -1,7 +1,7 @@
 import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
-import { Observable } from '../WeatherStationComponent/Observable.ts';
-import { Observer } from '../WeatherStationComponent/Observer.ts';
+import { Observable } from '../wmsComponent/Observable.ts';
+import { Observer } from '../wmsComponent/Observer.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
 import { TemperatureSensorImp } from '../API/TemperatureSensorImp.ts';
 

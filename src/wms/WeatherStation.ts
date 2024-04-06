@@ -1,8 +1,8 @@
-import { Observer } from '../WeatherStationComponent/Observer.ts';
+import { Observer } from '../wmsComponent/Observer.ts';
 import { AlarmClock } from './AlarmClock.ts';
 import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
 import { TemperatureSensor } from './TemperatureSensor.ts';
-import { WeatherStationComponent } from '../WeatherStationComponent/WeatherStationComponent.ts';
+import { WeatherStationComponent } from '../wmsComponent/WeatherStationComponent.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
 
 export class WeatherStation implements WeatherStationComponent {

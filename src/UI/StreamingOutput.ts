@@ -1,4 +1,4 @@
-import { WeatherStationComponent } from '../WeatherStationComponent/WeatherStationComponent.ts';
+import { WeatherStationComponent } from '../wmsComponent/WeatherStationComponent.ts';
 import { BarometricPressureObserver } from './BarometricPressureObserver.ts';
 import { BarometricPressureTrendObserver } from './BarometricPressureTrendObserver.ts';
 import { MonitoringScreen } from './MonitoringScreen.ts';

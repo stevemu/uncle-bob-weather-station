@@ -1,9 +1,9 @@
 import { AlarmClock } from './AlarmClock.ts';
 import { AlarmListener } from './AlarmListener.ts';
 import { BarometricPressureSensorImp } from '../API/BarometricPressureSensorImp.ts';
-import { Observer } from '../WeatherStationComponent/Observer.ts';
+import { Observer } from '../wmsComponent/Observer.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
-import { Observable } from '../WeatherStationComponent/Observable.ts';
+import { Observable } from '../wmsComponent/Observable.ts';
 
 export class BarometricPressureSensor implements Observable {
   private observers: Observer[] = [];

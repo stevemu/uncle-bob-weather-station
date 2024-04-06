@@ -1,4 +1,4 @@
-import { Observer } from '../WeatherStationComponent/Observer.ts';
+import { Observer } from '../wmsComponent/Observer.ts';
 import { AlarmClock } from './AlarmClock.ts';
 import { TemperatureSensor } from './TemperatureSensor.ts';
 import { WmsDataScope } from '../wmsData/WmsDataScope.ts';
