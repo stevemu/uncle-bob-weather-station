@@ -1,6 +1,6 @@
-import { DataToolkit } from '../wmsData/DataToolkit';
-import { HiLoData } from '../wmsData/HiLoData';
-import { HiLoDataProxy } from './HiLoDataProxy';
+import { DataToolkit } from '../wmsData/DataToolkit.ts';
+import { HiLoData } from '../wmsData/HiLoData.ts';
+import { HiLoDataProxy } from './HiLoDataProxy.ts';
 
 export class DataToolkitImp implements DataToolkit {
   getTempHiLoData(): HiLoData {

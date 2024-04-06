@@ -1,4 +1,4 @@
-import { PersistentImp, PersistentData } from '../API/PersistentImp';
+import { PersistentImp, PersistentData } from '../API/PersistentImp.ts';
 
 export class Nimbus1PersistentImp implements PersistentImp {
   private data: Record<string, PersistentData> = {};

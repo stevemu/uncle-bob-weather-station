@@ -1,4 +1,4 @@
-import { HiLoData } from './HiLoData';
+import { HiLoData } from './HiLoData.ts';
 
 export interface DataToolkit {
   getTempHiLoData(): HiLoData;

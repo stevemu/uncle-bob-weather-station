@@ -1,7 +1,7 @@
-import { PersistentImp } from '../API/PersistentImp';
-import { StationToolkit } from '../API/StationToolkit';
-import { HiLoData } from '../wmsData/HiLoData';
-import { HiLoDataImp } from '../wmsDataImp/HiLoDataImp';
+import { PersistentImp } from '../API/PersistentImp.ts';
+import { StationToolkit } from '../API/StationToolkit.ts';
+import { HiLoData } from '../wmsData/HiLoData.ts';
+import { HiLoDataImp } from '../wmsDataImp/HiLoDataImp.ts';
 
 export class HiLoDataProxy implements HiLoData {
   private pi: PersistentImp;

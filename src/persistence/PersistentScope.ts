@@ -1,5 +1,5 @@
-import { WmsDataScope } from '../wmsData/WmsDataScope';
-import { DataToolkitImp } from './DataToolkitImp';
+import { WmsDataScope } from '../wmsData/WmsDataScope.ts';
+import { DataToolkitImp } from './DataToolkitImp.ts';
 
 export class PersistentScope {
   public static init() {

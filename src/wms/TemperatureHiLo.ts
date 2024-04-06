@@ -1,8 +1,8 @@
-import { Observer } from '../WeatherStationComponent/Observer';
-import { AlarmClock } from './AlarmClock';
-import { TemperatureSensor } from './TemperatureSensor';
-import { WmsDataScope } from '../wmsData/WmsDataScope';
-import { HiLoData } from '../wmsData/HiLoData';
+import { Observer } from '../WeatherStationComponent/Observer.ts';
+import { AlarmClock } from './AlarmClock.ts';
+import { TemperatureSensor } from './TemperatureSensor.ts';
+import { WmsDataScope } from '../wmsData/WmsDataScope.ts';
+import { HiLoData } from '../wmsData/HiLoData.ts';
 
 export class TemperatureHiLo implements Observer {
   private hiLoData: HiLoData;
