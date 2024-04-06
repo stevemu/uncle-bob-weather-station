@@ -1,4 +1,4 @@
-import { HiLoData } from '../wmsdata1/HiLoData';
+import { HiLoData } from '../wmsData/HiLoData';
 
 export class HiLoDataImp implements HiLoData {
   constructor(

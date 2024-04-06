@@ -1,4 +1,4 @@
-import { WmsDataScope } from '../wmsdata1/WmsDataScope';
+import { WmsDataScope } from '../wmsData/WmsDataScope';
 import { DataToolkitImp } from './DataToolkitImp';
 
 export class PersistentScope {
