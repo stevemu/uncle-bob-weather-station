@@ -1,5 +1,5 @@
-import { DataToolkit } from '../wmsdata/DataToolkit';
-import { HiLoData } from '../wmsdata/HiLoData';
+import { DataToolkit } from '../wmsdata1/DataToolkit';
+import { HiLoData } from '../wmsdata1/HiLoData';
 import { HiLoDataProxy } from './HiLoDataProxy';
 
 export class DataToolkitImp implements DataToolkit {
