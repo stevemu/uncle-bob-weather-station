@@ -1,3 +1,7 @@
+# About
+
+uncle bob's weather station case study in the book Agile Software Development, Principles, Patterns, and Practices implemented with typescript
+
 ## Setup Instructions
 
 ### Prerequisites
