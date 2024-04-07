@@ -1,5 +1,6 @@
+import { StationToolkit } from '../API/StationToolkit.ts';
 import { HiLoData } from './HiLoData.ts';
 
 export interface DataToolkit {
-  getTempHiLoData(): HiLoData;
+  getTempHiLoData(st: StationToolkit, date: Date, init: number, initTime: Date): HiLoData;
 }

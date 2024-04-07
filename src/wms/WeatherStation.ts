@@ -4,6 +4,7 @@ import { BarometricPressureSensor } from './BarometricPressureSensor.ts';
 import { TemperatureSensor } from './TemperatureSensor.ts';
 import { WeatherStationComponent } from '../wmsComponent/WeatherStationComponent.ts';
 import { StationToolkit } from '../API/StationToolkit.ts';
+import { TemperatureHiLo } from './TemperatureHiLo.ts';
 
 export class WeatherStation implements WeatherStationComponent {
   private temperatureSensor!: TemperatureSensor;
@@ -14,6 +15,9 @@ export class WeatherStation implements WeatherStationComponent {
 
     this.temperatureSensor = new TemperatureSensor(ac, st);
     this.barometricPressureSensor = new BarometricPressureSensor(ac, st);
+
+    const temperatureHiLo = new TemperatureHiLo(st, ac, this.temperatureSensor);
+    this.temperatureSensor.addObserver(temperatureHiLo);
   }
 
   addTemperatureObserver(observer: Observer) {
